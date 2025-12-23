@@ -1,0 +1,50 @@
+###############################################################################
+# CONFIGURATION GLOBALE
+###############################################################################
+# Détection automatique du texte pour tous les fichiers
+* text=auto
+
+###############################################################################
+# PROTECTION LINUX/DOCKER (FORCE LF)
+# Ces fichiers DOIVENT être en LF pour ne pas casser sur Linux/Docker
+###############################################################################
+# Scripts Shell (partout dans le projet)
+**/*.sh text eol=lf
+**/*.bash text eol=lf
+
+# Docker (fichiers nommés Dockerfile, .dockerfile ou docker-compose)
+**/Dockerfile text eol=lf
+**/*.dockerfile text eol=lf
+**/docker-compose.yml text eol=lf
+**/docker-compose.yaml text eol=lf
+
+# Fichiers de configuration et Entrypoints
+**/.env* text eol=lf
+**/entrypoint.sh text eol=lf
+
+###############################################################################
+# LANGAGES DE PROGRAMMATION (CONVERSION AUTO)
+# Git les stocke en LF (pour GitHub/Linux) et les extrait en CRLF sur Windows
+###############################################################################
+**/*.js text
+**/*.jsx text
+**/*.ts text
+**/*.tsx text
+**/*.json text
+**/*.py text
+**/*.html text
+**/*.css text
+**/*.md text
+
+###############################################################################
+# FICHIERS BINAIRES (NE JAMAIS TOUCHER)
+# On force Git à ne pas essayer de convertir les fins de ligne ici
+###############################################################################
+**/*.png binary
+**/*.jpg binary
+**/*.jpeg binary
+**/*.gif binary
+**/*.pdf binary
+**/*.ico binary
+**/*.woff text eol=lf
+**/*.woff2 text eol=lf
