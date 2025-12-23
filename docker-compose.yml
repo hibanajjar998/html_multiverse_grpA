@@ -1,0 +1,16 @@
+# ./docker-compose yml
+services:
+  web:
+    # Remplacez par l'image sur GHCR si vous voulez tester l'image distante
+    # ou utilisez l'image locale 
+    image: multiverse-app:latest
+    ports:
+      - "8080:80"
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: any
+      resources:
+        limits:
+          cpus: '0.2'  # 20% d'un seul coeur CPU
+          memory: 64M  # quand dépassé, OOM Kill
