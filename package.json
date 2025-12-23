@@ -1,0 +1,30 @@
+{
+  "name": "html5up-multiverse",
+  "version": "1.0.0",
+  "description": "Site statique avec tests de qualité (Linting)",
+  "main": "index.html",
+  "scripts": {
+    "lint:html": "htmlhint **/*.html",
+    "lint:css": "stylelint \"assets/css/**/*.css\"",
+    "lint:js": "eslint \"assets/js/**/*.js\"",
+    "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
+    "lint:jsfix": "eslint \"assets/js/**/*.js\" --fix",
+    "lint:cssfix": "stylelint \"assets/css/**/*.css\" --fix",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "htmlhint": "^1.0.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard": "^36.0.0",
+    "jest": "^29.0.0",
+    "jest-environment-jsdom": "^29.0.0",
+    "jquery": "^3.6.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFiles": ["./jest.setup.js"]
+  }
+}
